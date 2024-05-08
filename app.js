@@ -4,6 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let cors = require('cors');
+const fs = require('fs');
 
 require('dotenv').config();
 
@@ -88,3 +89,15 @@ module.exports = app;
 
 console.log('The MYR server is up and running. Good luck and have fun!');
 console.log(process.cwd());
+console.log("Files: ");
+
+const directoryPath = process.cwd();
+
+fs.readdir(directoryPath, (err, files) => {
+  if (err) {
+    return console.log('Unable to scan directory: ' + err);
+  }
+  files.forEach(file => {
+    console.log(file);
+  });
+});
