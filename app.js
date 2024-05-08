@@ -87,3 +87,4 @@ app.use(function (err, req, res, next) {
 module.exports = app;
 
 console.log('The MYR server is up and running. Good luck and have fun!');
+console.log(process.cwd());
